@@ -8,6 +8,7 @@ Use it when Edgar opens another Grok Bot account (or another system) and wants i
 
 - `BOOTSTRAP.md`: step-by-step instructions for a fresh Grok Bot. **Start here.**
 - `context/`: who Edgar is (`user.md`), `standing-rules.md`, `connectors.md`, `bots-overview.md` (roster, routines, handoffs), and `projects/*.md`.
+- Warwin bots share `context/projects/warwin-brain.md`. That file is the Warwin knowledge base.
 - `bots/<slug>/`: one folder per bot:
   - `bot.md`: name, original id, avatar, section, full saved instructions (verbatim), what it does.
   - `routines.md`: each routine's name, schedule/trigger, timing, state, and full saved prompt.

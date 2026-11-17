@@ -2,7 +2,8 @@
 
 1. **No production deploys.** Staging only (Railway, dev.zappi.money).
 2. **NEXT_PUBLIC_L1_RECOVERY stays off in production.**
-3. **Cloud agents don't merge to main.** Feature PRs go to `develop`; releases go develop -> main and are Edgar's call. (Edgar later allowed agent-reviewed auto-merge into `develop` once checks pass; critical paths need a code-owner review from Edgar or Arman via CODEOWNERS.)
+3. **Never touch or merge to `main` from automation.** Feature PRs go to `develop`. Releases go develop -> main and are Edgar's call.
+3b. **Auto-merge only into `develop`, and only on edogbeatz/zappi.** An agent reviews first. Checks must pass. Critical paths need a code-owner review from Edgar or Arman via CODEOWNERS. Do not auto-merge any other repo or any other branch.
 4. **Never touch `main`** from automation.
 5. **Don't close or edit Linear issues unless asked.** Bots may create Todos where their profile says so; never auto-close.
 6. **Never send messages, post, email, or contact anyone unasked.** No public posts, no customer messages. Draft and wait for Edgar.

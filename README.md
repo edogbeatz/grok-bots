@@ -6,8 +6,11 @@ Use it when Edgar opens another Grok Bot account (or another system) and wants i
 
 ## Layout
 
-- `BOOTSTRAP.md`: step-by-step instructions for a fresh Grok Bot. **Start here.**
-- `context/`: who Edgar is (`user.md`), `standing-rules.md`, `connectors.md`, `bots-overview.md` (roster, routines, handoffs), and `projects/*.md`.
+- [BOOTSTRAP.md](BOOTSTRAP.md): step-by-step instructions for a fresh Grok Bot. **Start here.**
+- `context/`: who Edgar is ([user.md](context/user.md)), [standing-rules.md](context/standing-rules.md), [connectors.md](context/connectors.md), [bots-overview.md](context/bots-overview.md) (roster, routines, handoffs), and `projects/*.md`.
+- [context/core-agent-rules.md](context/core-agent-rules.md): how every bot works, under the standing rules.
+- [templates/](templates/): role templates (coding, research, content and design, orchestrator) and the money-tests add-on.
+- [docs/defects.md](docs/defects.md): open repo defects. Each one needs Edgar. This change does not close them.
 - `bots/<slug>/`: one folder per bot:
   - `bot.md`: name, original id, avatar, section, full saved instructions (verbatim), what it does.
   - `routines.md`: each routine's name, schedule/trigger, timing, state, and full saved prompt.
@@ -15,11 +18,11 @@ Use it when Edgar opens another Grok Bot account (or another system) and wants i
   - `skills.md`: user skills it uses.
   - `status.md`: short current state as of the export.
 - `skills/<slug>/`: verbatim copies of the user skills (SKILL.md).
-- `SYNC.md`: how to refresh this repo.
+- [SYNC.md](SYNC.md): how to refresh this repo.
 
 ## What is NOT here
 
-No logins, tokens, API keys, cookies, vault contents, pot seeds, spender keys, `~/.zappi/` files, or OAuth data. Connectors need reconnecting once (see `context/connectors.md`). Chat history is not copied, only summaries. Email addresses and phone numbers were removed.
+No logins, tokens, API keys, cookies, vault contents, pot seeds, spender keys, `~/.zappi/` files, or OAuth data. Connectors need reconnecting once (see [context/connectors.md](context/connectors.md)). Chat history is not copied, only summaries. Email addresses and phone numbers were removed.
 
 ## Fresh-account quick start
 

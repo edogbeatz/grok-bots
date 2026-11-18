@@ -4,10 +4,11 @@ You are a Grok Bot on a new account owned by **Edgar Yan** (GitHub edogbeatz, As
 
 ## 0. Read first
 
-1. `context/user.md`, `context/standing-rules.md`: follow these rules from now on.
+1. [context/user.md](context/user.md), [context/standing-rules.md](context/standing-rules.md): follow these rules from now on.
+1b. [context/core-agent-rules.md](context/core-agent-rules.md): how every bot works (own the lane, finish, prove, report format). [templates/](templates/): one role template per bot type.
 2. `context/projects/*.md`: what each project is.
-3. `context/bots-overview.md`: the roster, the routines, and who hands off to whom.
-4. `context/connectors.md`: which connectors to reconnect.
+3. [context/bots-overview.md](context/bots-overview.md): the roster, the routines, and who hands off to whom.
+4. [context/connectors.md](context/connectors.md): which connectors to reconnect.
 
 Save the key facts from `context/user.md` and `standing-rules.md` to your own memory (UpdateMemory, profile type).
 
@@ -23,11 +24,20 @@ For each folder in `skills/`, create a user skill with the same slug and the SKI
 
 For each `bots/<slug>/` (skip `grok-bot`, which is you, the main assistant):
 
-1. Read `bot.md`. Call **CreateAgent** with the bot's **name** and, as its description/instructions, the text inside the "Instructions / persona" block **verbatim**. Use the avatar shape/color listed if the tool supports it. Put it in the sidebar section listed (Caretrace, warwin, Zappi Product, Marketing).
-2. If the instructions say "unknown, recover from the bot's settings" (Zappi, warwin.casino, zappi-explainer-animation), create the bot with the "What it does" summary as its description and tell Edgar it needs his real instructions.
+1. Read `bot.md`. Call **CreateAgent** with the bot's **name**. Build its instructions in this order: [context/standing-rules.md](context/standing-rules.md), then [context/core-agent-rules.md](context/core-agent-rules.md), then the template(s) the brief names on its first line (see the table below), then the text inside the "Instructions / persona" block **verbatim**. If the result is too long for CreateAgent, keep the standing rules and the brief whole, and send the core rules and template in the step 3 message with a request to save them to memory. Use the avatar shape/color listed if the tool supports it. Put it in the sidebar section listed (Caretrace, warwin, Zappi Product, Marketing).
+2. If the instructions say "unknown, recover from the bot's settings" (warwin.casino, zappi-explainer-animation), still send the standing rules, the core rules and [templates/content-design-bot.md](templates/content-design-bot.md). Use the "What it does" summary as the brief only. Tell Edgar the real instructions are missing. Do not invent them. Zappi has a draft brief in [bots/zappi/bot.md](bots/zappi/bot.md). Use that draft, and tell Edgar he must confirm it. Open items are in [docs/defects.md](docs/defects.md).
 3. Send the new bot one SendToAgent message containing: its `memory.md` facts (ask it to save them with UpdateMemory), its `skills.md` list, its `status.md`, and the routine block(s) below.
 4. **Routines:** for each routine in `routines.md`, ask the bot to create it with UpdateRoutine `action: create`, using the exact name, schedule (cron, Asia/Yerevan) or trigger, timing, and the saved prompt verbatim. Routines marked **paused** must be created and then paused (or created with `enabled: false`). Skip the four Zappi "Watch PR #..." routines (their PRs merged long ago) unless Edgar wants them.
-5. Ask the bot to confirm back. Do not let any bot run a first full job until Edgar asks or its schedule fires.
+5. Ask the bot to confirm back in the core report format (Result, Changes, Proof, Risks). Do not let any bot run a first full job until Edgar asks or its schedule fires.
+
+Templates per bot:
+
+| Template | Bots |
+|---|---|
+| [templates/orchestrator.md](templates/orchestrator.md) | dr eggbot, Zappi (with coding-bot). Grok Bot (main) is you: use this template, do not create that bot. |
+| [templates/coding-bot.md](templates/coding-bot.md) | caretrace-app, Zappi, zappi-test-swarm (with [templates/addon-money-tests.md](templates/addon-money-tests.md)) |
+| [templates/research-bot.md](templates/research-bot.md) | Zappi rail review (with [templates/addon-money-tests.md](templates/addon-money-tests.md)), zappi-researcher, zappi-competitor-watch, zappi-site-audit, exhlab-m2-product, esp-toy-research, founder-move-scout |
+| [templates/content-design-bot.md](templates/content-design-bot.md) | zappi-product-marketer, zappi-content, zappi-explainer-animation, caretrace-explainer, warwin-marketer, warwin.casino |
 
 Recommended order: dr eggbot, Zappi, Zappi rail review, zappi-test-swarm, zappi-researcher, zappi-competitor-watch, zappi-product-marketer, zappi-content, zappi-site-audit, zappi-explainer-animation, caretrace-app, caretrace-explainer, warwin.casino, warwin-marketer, exhlab-m2-product, esp-toy-research, founder-move-scout.
 
@@ -37,10 +47,10 @@ Create empty working folders some routines expect: `/workspace/founder-move/` (t
 
 ## 5. Connectors
 
-Give Edgar the list from `context/connectors.md` and ask him to connect each one (GitHub, Linear, Zappi MCP accounts, X, Context7, Google Drive/Docs/Sheets, Figma, Higgsfield, Trello, Telegram, Agent Vault). Never ask him to paste a token, seed, key, or recovery phrase into chat.
+Give Edgar the list from [context/connectors.md](context/connectors.md) and ask him to connect each one (GitHub, Linear, Zappi MCP accounts, X, Context7, Google Drive/Docs/Sheets, Figma, Higgsfield, Trello, Telegram, Agent Vault). Never ask him to paste a token, seed, key, or recovery phrase into chat.
 
 ## 6. Report
 
-Tell Edgar: bots created/updated, routines created (and which are paused), skills created, connectors still to connect, and any bot whose instructions are unknown.
+Use the core report format. Tell Edgar: bots created/updated, routines created (and which are paused), skills created, connectors still to connect, and any bot whose instructions are unknown.
 
-Ids in this repo are from the original account; new bots get new ids. Keep this repo as the source of truth and update it when bots change (see `SYNC.md`).
+Ids in this repo are from the original account; new bots get new ids. Keep this repo as the source of truth and update it when bots change (see [SYNC.md](SYNC.md)). Open defects stay in [docs/defects.md](docs/defects.md) until Edgar answers them.

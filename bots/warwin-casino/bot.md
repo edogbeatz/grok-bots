@@ -14,6 +14,8 @@ Pass this text as the bot's description/instructions to CreateAgent.
 
 _Empty in the saved profile._ Full instructions: unknown, recover from the bot's settings.
 
+Do not invent the brief. When Edgar supplies it, use [templates/content-design-bot.md](../../templates/content-design-bot.md). OPEN. NEEDS EDGAR. See [docs/defects.md](../../docs/defects.md) item 3.
+
 ## What it does
 
 Read [`../../context/projects/warwin-brain.md`](../../context/projects/warwin-brain.md) before you design.

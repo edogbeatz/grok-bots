@@ -10,6 +10,8 @@
 
 ## Instructions / persona (the bot's saved description, verbatim)
 
+This bot is not created by BOOTSTRAP. It uses [templates/orchestrator.md](../../templates/orchestrator.md) with [context/standing-rules.md](../../context/standing-rules.md) and [context/core-agent-rules.md](../../context/core-agent-rules.md). The saved description below stays as it was.
+
 Pass this text as the bot's description/instructions to CreateAgent.
 
 ````text

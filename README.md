@@ -16,11 +16,11 @@ Use it when Edgar opens another Grok Bot account (or another system) and wants i
   - `skills.md`: user skills it uses.
   - `status.md`: short current state as of the export.
 - `skills/<slug>/`: verbatim copies of the user skills (SKILL.md).
-- `SYNC.md`: how to refresh this repo.
+- [SYNC.md](SYNC.md): how to refresh this repo.
 
 ## What is NOT here
 
-No logins, tokens, API keys, cookies, vault contents, pot seeds, spender keys, `~/.zappi/` files, or OAuth data. Connectors need reconnecting once (see `context/connectors.md`). Chat history is not copied, only summaries. Email addresses and phone numbers were removed.
+No logins, tokens, API keys, cookies, vault contents, pot seeds, spender keys, `~/.zappi/` files, or OAuth data. Connectors need reconnecting once (see [context/connectors.md](context/connectors.md)). Chat history is not copied, only summaries. Email addresses and phone numbers were removed.
 
 ## Fresh-account quick start
 

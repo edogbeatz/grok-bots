@@ -14,6 +14,8 @@ Pass this text as the bot's description/instructions to CreateAgent.
 
 _Empty in the saved profile._ Full instructions: unknown, recover from the bot's settings.
 
+Do not invent the brief. When Edgar supplies it, use [templates/content-design-bot.md](../../templates/content-design-bot.md). OPEN. NEEDS EDGAR. See [docs/defects.md](../../docs/defects.md) item 3.
+
 ## What it does
 
 Inferred from its only message (2026-10-21): helps make Zappi's explainer animation, from script and storyboard through to finished video. Never actually used yet. Related skill: explainer-video-render.

@@ -8,11 +8,15 @@
 - **Created:** 2026-10-19
 - **Chat size at export:** 8 messages
 
-## Instructions / persona (the bot's saved description, verbatim)
+## Instructions / persona
 
-Pass this text as the bot's description/instructions to CreateAgent.
+The one-line brief stays. A fuller brief needs Edgar. See [docs/defects.md](../../docs/defects.md) item 4.
+
+Compose the CreateAgent instructions as: [context/standing-rules.md](../../context/standing-rules.md) + [context/core-agent-rules.md](../../context/core-agent-rules.md) + the template named below + this brief.
 
 ````text
+Template: templates/research-bot.md.
+
 SEO + content + speed + a11y + CRO + schema audit. Scored, P0/P1/P2, evidence URLs. Monthly diff. No invented metrics.
 ````
 

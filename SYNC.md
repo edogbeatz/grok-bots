@@ -2,6 +2,8 @@
 
 Planned: a weekly routine on the main Grok Bot (e.g. Mondays 12:00 Asia/Yerevan) that re-exports the bots into this repo and commits. Not created yet; ask Edgar first.
 
+A different Monday routine already exists: `weekly-bot-design-check` in [bots/grok-bot/routines.md](bots/grok-bot/routines.md) (10:00 Asia/Yerevan). It checks whether bots follow the design. It does not export this repo.
+
 Each sync:
 1. Read `/home/box/agent-data/agents/*/profile.json` (name, description, avatar) and `/home/box/agent-data/settings.json` `sidebarSections` (read-only).
 2. For routines, read each bot's transcript (ReadTranscript `in=<bot id>`) for UpdateRoutine create/update/get/pause calls, or ask each bot to list its routines with full prompts.

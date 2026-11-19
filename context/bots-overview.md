@@ -8,7 +8,7 @@
 | esp-toy-research | `bots/esp-toy-research/` | `fd1b4b42-7333-43e2-93ce-37eb34574c44` | Unassigned | My only job: research for Edgar's ESP-based personal-assistant toy (kids and adults). I report findings with dated source links. I never wri… |
 | exhlab-m2-product | `bots/exhlab-m2-product/` | `72de6273-d4bb-40e3-b867-7b992bb7064f` | Unassigned | My only job: help Edgar develop an app based on EXHLAB's M2 equation by researching competition, understanding the target user, and clarifyi… |
 | founder-move-scout | `bots/founder-move-scout/` | `e89eb0e7-fe7c-48e6-b6af-d1088662ee50` | Unassigned | My only job: research investors and visa or residency routes in the UAE and Canada for Edgar's two startups, CareTrace (care and health-trac… |
-| Grok Bot | `bots/grok-bot/` | `9bce498a-82dd-46ba-a2a8-4c9e2248c738` | Unassigned | A teammate with its own computer that takes real work off your plate.… |
+| Grok Bot | `bots/grok-bot/` | `9bce498a-82dd-46ba-a2a8-4c9e2248c738` | Unassigned | Main coordinator. Stock description is one line. Brief, memory, routines, and open items are in the folder. Rebuild with [MIGRATION.md](../MIGRATION.md). |
 | warwin-marketer | `bots/warwin-marketer/` | `10be853a-4007-4be2-9380-40743fc00d48` | warwin | My only job: Warwin's marketing for Argentina. I turn the designer brief into a go-to-market plan, a posting calendar and per-piece campaign… |
 | warwin.casino | `bots/warwin-casino/` | `67c31a6f-99a8-4403-8776-6115dd27aa35` | warwin | Inferred from chat history (not saved instructions): Warwin's **designer bot** (warwin.casino). Started 2026-11-02 from the Google Doc `Warw… |
 | Zappi | `bots/zappi/` | `cdff0cfc-2ade-47d9-b08b-68132696d5ae` | Marketing | Inferred from chat history (not saved instructions): Edgar's Zappi **product assistant**. Edgar's first ask (2026-10-19): "check the github … |
@@ -30,6 +30,8 @@
 | esp-toy-research | esp-toy-weekly | enabled (as last seen) |
 | exhlab-m2-product | exhlab-m2-weekly | enabled (as last seen) |
 | founder-move-scout | weekly-founder-move-digest | enabled (as last seen) |
+| Grok Bot | arman-slack-watch | enabled (snapshot 2026-11-19) |
+| Grok Bot | weekly-bot-design-check | enabled (snapshot 2026-11-19; first run named 2026-11-23) |
 | warwin.casino | Warwin Trello: things for Edgar | enabled (as last seen) |
 | Zappi | Watch PR #464 (develop test fix) | paused |
 | Zappi | Watch PR #447 auto-merge | paused |
@@ -47,7 +49,8 @@
 ## Handoffs
 
 - **dr eggbot** designs and creates new bots (CreateAgent), then messages each new bot its setup task (usually a routine to create). Bot-creation requests go through it.
-- **Grok Bot (main)** is Edgar's general assistant and coordinator; it relays asks to other bots with SendToAgent.
+- **Grok Bot (main)** is Edgar's general assistant and coordinator. It relays asks to other bots with SendToAgent. Its second brain (2026-11-19) is in [bots/grok-bot/](../bots/grok-bot/). Rebuild it with [MIGRATION.md](../MIGRATION.md). It runs `arman-slack-watch` and `weekly-bot-design-check`.
+- The 2026-11-19 snapshot names a live bot `zappi-legal` and a live bot "Zappi Rail Test". This repo has no `zappi-legal` folder. "Zappi Rail Test" is not a folder name. The rail-test bot in this repo is `zappi-test-swarm`. The snapshot header says 16 live teammates and then lists 18 names.
 - **Zappi** (product assistant) owns Linear triage and cloud-agent PRs for zappi web/Nest; asked dr eggbot for zappi-competitor-watch.
 - **Zappi marketing team:** zappi-researcher (weekly market brief) feeds "suggest for the brain" items to zappi-product-marketer (positioning, wiki/marketing/ in the zappi repo), which feeds zappi-content (docs intros, demo scripts). zappi-competitor-watch is competitors only. zappi-site-audit audits the site. zappi-explainer-animation is unused so far.
 - **Zappi engineering checks:** Zappi rail review (vendor docs vs wiki vs code, daily rail watch, files LaunchPad tasks), zappi-test-swarm (pot/account test matrix, files Linear Todos).

@@ -39,7 +39,7 @@ I draft messages. Edgar presses Send. I do not send, post, email, or contact any
 
 Edgar's general assistant and coordinator. It uses voice calls, research, usage checks, and SendToAgent. dr eggbot builds new bots. This bot coordinates them. It also did the earlier Zappi L1 recovery release work. The flag NEXT_PUBLIC_L1_RECOVERY stays off in production.
 
-As of the 2026-11-19 snapshot it also runs two routines (Arman Slack watch, weekly bot-design check) and holds the memory in [memory.md](memory.md).
+As of 2026-11-19 17:10 Asia/Yerevan it runs three routines (Arman Slack watch, weekly bot-design check, daily grok-bots sync) and holds the memory in [memory.md](memory.md). Edgar is moving to a new main bot the same day. That bot follows [MIGRATION.md](../../MIGRATION.md).
 
 ## Connectors (this bot, 2026-11-19 snapshot)
 

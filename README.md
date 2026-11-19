@@ -1,6 +1,6 @@
 # grok-bots
 
-Portable export of Edgar Yan's (GitHub **edogbeatz**) whole Grok Bot setup: 18 bot folders, their instructions, routines, memory, skills, and shared context. Exported 2026-11-16 (Asia/Yerevan) from the original account. The main coordinator's second brain was refreshed from a snapshot on 2026-11-19.
+Portable export of Edgar Yan's (GitHub **edogbeatz**) whole Grok Bot setup: 18 bot folders, their instructions, routines, memory, skills, and shared context. Exported 2026-11-16 (Asia/Yerevan) from the original account. The main coordinator's second brain was refreshed from a snapshot on 2026-11-19, with a 17:10 addendum the same day. Edgar is starting a new main bot. Follow [MIGRATION.md](MIGRATION.md) first.
 
 Use it when Edgar opens another Grok Bot account (or another system) and wants it to know what's going on and to have the same bots.
 

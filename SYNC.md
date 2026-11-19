@@ -1,8 +1,8 @@
 # Sync
 
-Planned: a weekly routine on the main Grok Bot (e.g. Mondays 12:00 Asia/Yerevan) that re-exports the bots into this repo and commits. Not created yet; ask Edgar first.
+Edgar approved a daily sync on 2026-11-19. His words: "Auto-merge the daily grok-bots update to main. Add this as a rule 3 exception for grok-bots only." The routine is `grok-bots-daily-sync` in [bots/grok-bot/routines.md](bots/grok-bot/routines.md): cron `0 22 * * *`, Asia/Yerevan. It may auto-merge to `main` on edogbeatz/grok-bots only. The older Monday 12:00 export plan is not a second routine.
 
-A different Monday routine already exists: `weekly-bot-design-check` in [bots/grok-bot/routines.md](bots/grok-bot/routines.md) (10:00 Asia/Yerevan). It checks whether bots follow the design. It does not export this repo.
+`weekly-bot-design-check` (Monday 10:00 Asia/Yerevan) checks whether bots follow the design. It does not export this repo.
 
 Each sync:
 1. Read `/home/box/agent-data/agents/*/profile.json` (name, description, avatar) and `/home/box/agent-data/settings.json` `sidebarSections` (read-only).

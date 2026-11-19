@@ -32,6 +32,7 @@
 | founder-move-scout | weekly-founder-move-digest | enabled (as last seen) |
 | Grok Bot | arman-slack-watch | enabled (snapshot 2026-11-19) |
 | Grok Bot | weekly-bot-design-check | enabled (snapshot 2026-11-19; first run named 2026-11-23) |
+| Grok Bot | grok-bots-daily-sync | enabled (addendum 2026-11-19 17:10; cron `0 22 * * *` Asia/Yerevan) |
 | warwin.casino | Warwin Trello: things for Edgar | enabled (as last seen) |
 | Zappi | Watch PR #464 (develop test fix) | paused |
 | Zappi | Watch PR #447 auto-merge | paused |
@@ -49,7 +50,7 @@
 ## Handoffs
 
 - **dr eggbot** designs and creates new bots (CreateAgent), then messages each new bot its setup task (usually a routine to create). Bot-creation requests go through it.
-- **Grok Bot (main)** is Edgar's general assistant and coordinator. It relays asks to other bots with SendToAgent. Its second brain (2026-11-19) is in [bots/grok-bot/](../bots/grok-bot/). Rebuild it with [MIGRATION.md](../MIGRATION.md). It runs `arman-slack-watch` and `weekly-bot-design-check`.
+- **Grok Bot (main)** is Edgar's general assistant and coordinator. It relays asks to other bots with SendToAgent. Its second brain (2026-11-19, addendum 17:10 Asia/Yerevan) is in [bots/grok-bot/](../bots/grok-bot/). Edgar is moving to a new main bot the same day. Rebuild it with [MIGRATION.md](../MIGRATION.md). It runs `arman-slack-watch`, `weekly-bot-design-check`, and `grok-bots-daily-sync`.
 - The 2026-11-19 snapshot names a live bot `zappi-legal` and a live bot "Zappi Rail Test". This repo has no `zappi-legal` folder. "Zappi Rail Test" is not a folder name. The rail-test bot in this repo is `zappi-test-swarm`. The snapshot header says 16 live teammates and then lists 18 names.
 - **Zappi** (product assistant) owns Linear triage and cloud-agent PRs for zappi web/Nest; asked dr eggbot for zappi-competitor-watch.
 - **Zappi marketing team:** zappi-researcher (weekly market brief) feeds "suggest for the brain" items to zappi-product-marketer (positioning, wiki/marketing/ in the zappi repo), which feeds zappi-content (docs intros, demo scripts). zappi-competitor-watch is competitors only. zappi-site-audit audits the site. zappi-explainer-animation is unused so far.

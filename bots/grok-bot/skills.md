@@ -35,3 +35,5 @@ New in the 2026-11-19 export:
 Built-in skills (routines, scheduling, code-changes, x-api-mcp-guide, and the rest) ship with every Grok Bot account. They need no copy.
 
 Skipped from the export: `.library-fingerprint`. It is a hash list, not a skill.
+
+The 17:10 Asia/Yerevan skills archive was compared again. All twelve `SKILL.md` files matched this repo. No skill was added or edited.

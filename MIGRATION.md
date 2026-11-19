@@ -1,6 +1,22 @@
 # Move the main Grok Bot
 
-Use this file to rebuild Edgar's main coordinator on a new Grok Bot.
+## Handover (2026-11-19)
+
+Edgar is starting a new main bot on 2026-11-19.
+You are that bot. Read this file first.
+
+Recreate these three routines. Prompts, crons, and timezone are in [bots/grok-bot/routines.md](bots/grok-bot/routines.md). Timezone for all three is Asia/Yerevan.
+
+1. `arman-slack-watch` — cron `0,30 9-21 * * *` — flexible, about 15 minutes.
+2. `weekly-bot-design-check` — cron `0 10 * * 1` — flexible, about 15 minutes.
+3. `grok-bots-daily-sync` — cron `0 22 * * *` — flexible, 15 minutes early or 30 minutes late.
+
+The old box already has this file. Read it. Do not reset it. Do not invent a new cursor.
+
+- `/workspace/arman-watch/last_seen.json`
+  - Arman DM: `D0CFX3D2TEZ`
+  - #bots: `C0CKZUSP03S`
+
 The other bots come after this, in [BOOTSTRAP.md](BOOTSTRAP.md).
 
 Write in short sentences. Edgar is not a native English speaker.
@@ -84,11 +100,15 @@ Use the same name, the same cron, timezone Asia/Yerevan, flexible timing, and th
 |---|---|---|---|
 | `arman-slack-watch` | `0,30 9-21 * * *` | Asia/Yerevan | Only when Arman has a new message. Flexible, about 15 minutes. |
 | `weekly-bot-design-check` | `0 10 * * 1` | Asia/Yerevan | Monday about 10:00. First run named in the snapshot: 2026-11-23. Sends on a breach, a move of more than 10 points, or the first run. |
+| `grok-bots-daily-sync` | `0 22 * * *` | Asia/Yerevan | About 22:00. Flexible, 15 minutes early or 30 minutes late. Sends only when the second brain changed. May auto-merge to `main` on edogbeatz/grok-bots only, under the rule 3 exception. |
 
 Create these folders if they are missing:
 
 - `/workspace/arman-watch/`
 - `/workspace/bot-design-check/`
+- `/workspace/handoff/daily/`
+
+`/workspace/arman-watch/last_seen.json` should already be on the box. Read it. Do not reset it.
 
 Do not run a full check now. Let the schedule fire.
 Do not reply on Slack from the Arman watch. The prompt forbids that.
@@ -117,7 +137,7 @@ From the 2026-11-19 snapshot, this bot uses:
 13. X
 
 Details and older names are in [context/connectors.md](context/connectors.md).
-The 2026-11-16 export also named Agent Vault, Composio, and Railway for this bot. The snapshot does not. Ask Edgar before you connect those three.
+The 2026-11-16 export also named Agent Vault, Composio, and Railway for this bot. The morning snapshot does not list them. The 17:10 addendum says this bot has no Railway access. Ask Edgar before you connect Agent Vault or Composio. Do not connect Railway unless he asks.
 
 Slack ids to expect after connect:
 
@@ -133,13 +153,16 @@ Tell Edgar the result in the core report format: Result, Changes, Proof, Risks.
 - [ ] The short description is the stock line.
 - [ ] The instructions include standing rules, core rules, the orchestrator template, and the brief.
 - [ ] Rule 3 and rule 3b are both present, and they stay split.
+- [ ] The rule 3 exception quotes Edgar: "Auto-merge the daily grok-bots update to main. Add this as a rule 3 exception for grok-bots only." It covers edogbeatz/grok-bots only.
 - [ ] The zappi-nest auto-merge note is still an open question. It is not a rule. You did not auto-merge that repo.
 - [ ] Each memory bullet in [bots/grok-bot/memory.md](bots/grok-bot/memory.md) is saved.
 - [ ] `understand-outputs` is installed.
 - [ ] The other skill folders in [skills/](skills/) are installed, with the same text.
 - [ ] `arman-slack-watch` exists, cron `0,30 9-21 * * *`, Asia/Yerevan, prompt matches [routines.md](bots/grok-bot/routines.md).
 - [ ] `weekly-bot-design-check` exists, cron `0 10 * * 1`, Asia/Yerevan, prompt matches [routines.md](bots/grok-bot/routines.md).
-- [ ] `/workspace/arman-watch/` and `/workspace/bot-design-check/` exist.
+- [ ] `grok-bots-daily-sync` exists, cron `0 22 * * *`, Asia/Yerevan, prompt matches [routines.md](bots/grok-bot/routines.md).
+- [ ] `/workspace/arman-watch/last_seen.json` was read and left as it was.
+- [ ] `/workspace/bot-design-check/` and `/workspace/handoff/daily/` exist.
 - [ ] The connector list in section 6 was shown to Edgar. Nothing was connected with a pasted token.
 - [ ] No secret, token, key, seed, session, or `~/.zappi/` file was written into this repo.
 - [ ] Open items in [bots/grok-bot/status.md](bots/grok-bot/status.md) were shown to Edgar and left open.
@@ -152,4 +175,4 @@ Then follow [BOOTSTRAP.md](BOOTSTRAP.md) for the teammate bots.
 - "Zappi Rail Test" as its own bot. The repo folder for rail tests is [bots/zappi-test-swarm/](bots/zappi-test-swarm/). Edgar must say if that is the same bot.
 - Edgar's email. The snapshot had one. This repo does not store email addresses.
 - Chat history. Only the facts in [bots/grok-bot/memory.md](bots/grok-bot/memory.md).
-- The weekly repo-export routine in [SYNC.md](SYNC.md). That routine is still not created. `weekly-bot-design-check` is a different job.
+- The old Monday 12:00 export idea in [SYNC.md](SYNC.md). Edgar replaced it with `grok-bots-daily-sync` at 22:00 Asia/Yerevan. `weekly-bot-design-check` is a different job. It does not export the repo.

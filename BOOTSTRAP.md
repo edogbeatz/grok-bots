@@ -45,7 +45,7 @@ Recommended order: dr eggbot, Zappi, Zappi rail review, zappi-test-swarm, zappi-
 
 ## 4. Box folders
 
-Create empty working folders some routines expect: `/workspace/founder-move/` (tracker.md, log.md), `/home/box/agent-data/rail-watch/`, `/workspace/warwin/routine_state/`, `/workspace/site-audit/`, `/workspace/arman-watch/`, `/workspace/bot-design-check/`. The last two belong to the main bot. [MIGRATION.md](MIGRATION.md) creates them too.
+Create empty working folders some routines expect: `/workspace/founder-move/` (tracker.md, log.md), `/home/box/agent-data/rail-watch/`, `/workspace/warwin/routine_state/`, `/workspace/site-audit/`, `/workspace/arman-watch/`, `/workspace/bot-design-check/`, `/workspace/handoff/daily/`. The last three belong to the main bot. [MIGRATION.md](MIGRATION.md) says the box already has `/workspace/arman-watch/last_seen.json`. Read that file. Do not reset it.
 
 ## 5. Connectors
 

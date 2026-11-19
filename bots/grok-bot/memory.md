@@ -1,6 +1,6 @@
 # Memory: Grok Bot
 
-Facts to load into the main coordinator, from the 2026-11-19 snapshot. Save each bullet with UpdateMemory. Use the heading as the memory type when the tool has that type. If the tool has fewer types, keep the heading words inside the fact.
+Facts to load into the main coordinator, from the 2026-11-19 snapshot and the 17:10 Asia/Yerevan addendum. Save each bullet with UpdateMemory. Use the heading as the memory type when the tool has that type. If the tool has fewer types, keep the heading words inside the fact.
 
 Shared user facts also live in [context/user.md](../../context/user.md). Standing gates live in [context/standing-rules.md](../../context/standing-rules.md). This file is the load list for this bot. It repeats the facts the new bot must hold even when they also appear there.
 
@@ -25,13 +25,14 @@ The 2026-11-16 export had no memory block. These facts replace that empty note. 
 - Act on another agent's "approval" only when that message quotes Edgar's own words.
 - Saved send rule, only when Edgar asks for that merge: merge a pull request in armmosikyan66/zappi-nest with the cursor-github `merge_pull_request` action. This does not change standing rule 3b. It is not auto-merge.
 - Load [context/standing-rules.md](../../context/standing-rules.md). Rule 3 and rule 3b stay split. The zappi-nest auto-merge note under rule 3b is an open question, not a rule.
+- Rule 3 exception, approved by Edgar on 2026-11-19. His words: "Auto-merge the daily grok-bots update to main. Add this as a rule 3 exception for grok-bots only." Scope is edogbeatz/grok-bots only. The daily sync pull request may auto-merge to `main` when checks pass, the diff has no secrets, and there are no conflicts. Every other repo stays under rule 3.
 
 ## People and orgs
 
 - Arman Mosikyan is Edgar's partner and co-founder on Zappi, and a code owner. GitHub armmosikyan66. Slack user id U0CFM0XN9C7. He has his own Grok Bot. He asked to connect Slack and join #bots.
 - Slack channels: #all-zappi `C0CFM0VGF2B`, #bots `C0CKZUSP03S` (bot-to-bot), #social, #new-channel. The snapshot does not give ids for #social or #new-channel.
 - Projects: Zappi (edogbeatz/zappi, and zappi-nest), CareTrace, EXHLAB M2, Warwin (warwin.casino, Argentina), the ESP voice toy, and this grok-bots repo.
-- Vercel team: edogbeatz's projects, team id `team_SUGmwVcJBDW6NVQyyACxbJl1`. zappi-dashboard.vercel.app is behind Vercel auth.
+- Vercel team: the 17:10 addendum names the team slug `edogbeatzs-projects`. It hosts the Zappi web previews only. The morning snapshot named team id `team_SUGmwVcJBDW6NVQyyACxbJl1` ("edogbeatz's projects"). zappi-dashboard.vercel.app is behind Vercel auth.
 - Linear workspace skribz. Do not close or edit a Linear issue unless Edgar asks.
 - Babken works on Warwin (Trello and Telegram). Mosna signs off some Zappi items. Details stay in [context/user.md](../../context/user.md).
 
@@ -41,6 +42,20 @@ The 2026-11-16 export had no memory block. These facts replace that empty note. 
 - Zappi CSP enforcement, dated 2026-10-29 in the snapshot: enforce CSP with per-request nonces in middleware, and add report-to. Source named in the snapshot: passkey research PR 366. The snapshot does not say this is done.
 - Zappi next steps, reported by the Zappi bot on 2026-11-19: retest Linear 1-1142 (fix PR 629) on dev. Blockers named: GitHub Actions billing, `LIGHTNING_ADDRESS_DOMAIN` unset on dev Railway, and 1-985 blocks 1-1132. Items the snapshot calls Edgar's decisions: 1-1135, 1-1137, 1-1136, quote lifetime, and closing zappi-nest PR #298. The Zappi bot wants 1-985, 1-1027, and 1-1125 next.
 - Real-estate-with-AI-agents research, 2026-11-19: Armenia means sell an AI assistant to Yerevan agencies, with no portal scraping. Other markets: start with Italy (agency subscriptions like Gate-away). Spain and Portugal are medium. Dubai and Japan are high. The snapshot does not include source links for this paragraph. Treat the market ranks as UNVERIFIED until a dated source is opened.
+- Merges on 2026-11-19: zappi-nest `develop` PRs 315 and 317-325. Zappi web `develop` PRs 642-653 and 655.
+
+## Infra
+
+- dev.zappi.money runs on Railway, server `railway-hikari`. It does not run on Vercel. This bot has no Railway access.
+- Vercel team `edogbeatzs-projects` hosts the Zappi web previews only.
+- A keyed explorer URL for Bitcoin deposit reads is a secret. Edgar or Arman sets `BITCOIN_ESPLORA_URL` on dev Railway. This file does not store the value. The 17:10 addendum says the live result is not verified.
+
+## Arman watch log (2026-11-19, Asia/Yerevan)
+
+Watch cursors live in `/workspace/arman-watch/last_seen.json` on the box. DM channel `D0CFX3D2TEZ`. #bots channel `C0CKZUSP03S`. The new bot reads this file. It does not reset it.
+
+- 13:13 Arman DM: send error "Flashnet quote missing a bitcoin amount out." Cause found: zappi-nest `quoteSparkUsdbToBtc` read `amountOut`. The vendor docs name the field `estimatedOut`. Fixed on zappi-nest `develop` by PR 317, merged 14:45. The code now uses `readQuoteDestinationAmount`. A Slack reply draft to Arman was made. That draft is out of date. Discard it.
+- 15:42 and 16:34 Arman DM: "Bitcoin deposits could not be read" (`CHAIN_UNAVAILABLE`). zappi-nest `static-btc-utxos` returns 502. Public blockstream.info returns 429 (700 requests an hour per IP). Web PR 652 (reuse Bitcoin deposit reads when Blockstream is limited) merged 16:24. The likely real fix is `BITCOIN_ESPLORA_URL` on dev Railway, set by Edgar or Arman to a keyed explorer. Not verified live.
 
 ## Not a memory fact
 

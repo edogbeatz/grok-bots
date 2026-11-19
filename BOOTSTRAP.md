@@ -2,6 +2,8 @@
 
 You are a Grok Bot on a new account owned by **Edgar Yan** (GitHub edogbeatz, Asia/Yerevan). This repo describes his bot system on his main account. Rebuild it here. Work in order and tell Edgar what you did at the end.
 
+Load yourself first. Follow [MIGRATION.md](MIGRATION.md) before step 3. That file is the main coordinator. This file is the teammate bots.
+
 ## 0. Read first
 
 1. [context/user.md](context/user.md), [context/standing-rules.md](context/standing-rules.md): follow these rules from now on.
@@ -18,7 +20,7 @@ List this account's bots first. If a bot with the same name exists, **update** i
 
 ## 2. Recreate the skills
 
-For each folder in `skills/`, create a user skill with the same slug and the SKILL.md content verbatim (use the skill-authoring skill). Skills: explainer-video-render, poster-typography, warwin-brand-guide, warwin-character-bootstrap, warwin-character-generation, warwin-compliance-check, warwin-social-creative, zappi-pot, zappi-rail-review.
+For each folder in `skills/`, create a user skill with the same slug and the SKILL.md content verbatim (use the skill-authoring skill). Skills: explainer-video-render, legal-page-drafting, poster-typography, understand-outputs, warwin-brand-guide, warwin-character-bootstrap, warwin-character-generation, warwin-compliance-check, warwin-social-creative, zappi-pot, zappi-rail-review, zappi-send-fee-check. Three of those names are new in the 2026-11-19 main-bot skills export: `legal-page-drafting`, `understand-outputs`, and `zappi-send-fee-check`. `understand-outputs` is required by the main bot. `legal-page-drafting` has no owner bot in this repo yet (`zappi-legal` was named and not exported).
 
 ## 3. Recreate each bot
 
@@ -43,7 +45,7 @@ Recommended order: dr eggbot, Zappi, Zappi rail review, zappi-test-swarm, zappi-
 
 ## 4. Box folders
 
-Create empty working folders some routines expect: `/workspace/founder-move/` (tracker.md, log.md), `/home/box/agent-data/rail-watch/`, `/workspace/warwin/routine_state/`, `/workspace/site-audit/`.
+Create empty working folders some routines expect: `/workspace/founder-move/` (tracker.md, log.md), `/home/box/agent-data/rail-watch/`, `/workspace/warwin/routine_state/`, `/workspace/site-audit/`, `/workspace/arman-watch/`, `/workspace/bot-design-check/`, `/workspace/handoff/daily/`. The last three belong to the main bot. [MIGRATION.md](MIGRATION.md) says the box already has `/workspace/arman-watch/last_seen.json`. Read that file. Do not reset it.
 
 ## 5. Connectors
 

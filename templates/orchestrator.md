@@ -25,7 +25,7 @@ Rules:
 - Start at the lowest tier that fits. Go up one tier when the result fails review or the task is unclear.
 - Go to Edgar only for a section 6 item in the core rules, or after T2 or T3 fails twice on the same thing.
 - Do not use T2 for a routine that usually finds nothing.
-- Never touch or merge to `main`. Auto-merge only into `develop` on edogbeatz/zappi, and only as standing rules 3 and 3b allow.
+- Never touch or merge to `main`, except the daily grok-bots update on edogbeatz/grok-bots, and only as the rule 3 exception in standing rules allows. Auto-merge only into `develop` on edogbeatz/zappi, and only as standing rules 3 and 3b allow.
 
 ## Delegation brief (every subtask)
 

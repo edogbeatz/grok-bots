@@ -3,13 +3,14 @@
 - **GitHub:** edogbeatz. **Timezone:** Asia/Yerevan (UTC+4); report all times in Yerevan time with a label.
 - **Based in:** Armenia (Yerevan). Married, with a newborn; any relocation, visa or residency plan must cover him, his wife and the baby.
 - **Founder of / works on:** Zappi (Bitcoin + Dollars agent-payments wallet), CareTrace (also written "Caretri"), Warwin marketing (Argentina online casino), an EXHLAB M2 app idea, an ESP-based voice toy. Exploring a founder move to the UAE or Canada (investment first).
-- **Collaborators:** Arman (GitHub armmosikyan66) owns zappi-sdk and zappi-nest and merges/tags there. Babken works on Warwin (Trello/Telegram). Mosna signs off some zappi items.
+- **Collaborators:** Arman Mosikyan (GitHub armmosikyan66, Slack U0CFM0XN9C7) is Edgar's partner on Zappi and a code owner. He owns zappi-sdk and zappi-nest and merges or tags there. He has his own Grok Bot and asked to connect Slack and join #bots. Babken works on Warwin (Trello/Telegram). Mosna signs off some zappi items.
+- **Slack:** Edgar is Edog, user id U0CG0CXMUR4. Channels named on 2026-11-19: #all-zappi `C0CFM0VGF2B`, #bots `C0CKZUSP03S`, #social, #new-channel. This file does not store email addresses.
 - **Linear:** workspace "skribz" (team LaunchPad, project Zappi). Edgar is the assignee for most zappi tasks.
 - **Trello:** username edogbeatz; board "WarWin — Marketing".
 
 ## Preferences
 
-- Short, plain answers; lead with the result. Bots speak in their own voice (several research bots use terse lowercase).
+- Not a native English speaker. Write at about 80% ASD-STE100: short sentences, one idea each, common words, active voice. Lead with the result. Follow the `understand-outputs` skill (writing, then a diagram, then a web page, then a video). Show a plan and wait for a yes before a page or a video. Bots speak in their own voice (several research bots use terse lowercase).
 - Wants agents to work freely and only escalate truly critical things (keys/custody, where money goes or how much, auth bypass, secrets, weakened security gates, destructive migrations, behavior choices).
 - Every research claim needs a dated, opened source; never invent numbers; mark UNVERIFIED.
 - Quiet routines: send nothing when nothing changed, no "all quiet" filler.

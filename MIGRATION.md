@@ -7,7 +7,7 @@ You are that bot. Read this file first.
 
 Recreate these three routines. Prompts, crons, and timezone are in [bots/grok-bot/routines.md](bots/grok-bot/routines.md). Timezone for all three is Asia/Yerevan.
 
-1. `arman-slack-watch` — cron `0,30 9-21 * * *` — flexible, about 15 minutes.
+1. `arman-slack-watch` — cron `0,30 9-21 * * *` — flexible, about 15 minutes. Paused since 2026-11-20 09:37 Asia/Yerevan. Create it paused. Resume once Edgar reconnects Slack and re-enables it. The cron does not change.
 2. `weekly-bot-design-check` — cron `0 10 * * 1` — flexible, about 15 minutes.
 3. `grok-bots-daily-sync` — cron `0 22 * * *` — flexible, 15 minutes early or 30 minutes late.
 
@@ -95,10 +95,11 @@ Install the older skills too, so the account matches the export:
 Open [bots/grok-bot/routines.md](bots/grok-bot/routines.md).
 Create each routine with UpdateRoutine, action `create`.
 Use the same name, the same cron, timezone Asia/Yerevan, flexible timing, and the saved prompt word for word.
+Create `arman-slack-watch` paused. Resume it only after Edgar reconnects Slack and re-enables it.
 
 | Routine | Cron | Timezone | When it sends |
 |---|---|---|---|
-| `arman-slack-watch` | `0,30 9-21 * * *` | Asia/Yerevan | Only when Arman has a new message. Flexible, about 15 minutes. |
+| `arman-slack-watch` | `0,30 9-21 * * *` | Asia/Yerevan | Only when Arman has a new message. Flexible, about 15 minutes. Paused since 2026-11-20 09:37. The Slack connector failed auth twice (`needsAuth`, 0 tools) and the routine paused itself. Resume once Edgar reconnects Slack and re-enables it. Cron unchanged. |
 | `weekly-bot-design-check` | `0 10 * * 1` | Asia/Yerevan | Monday about 10:00. First run named in the snapshot: 2026-11-23. Sends on a breach, a move of more than 10 points, or the first run. |
 | `grok-bots-daily-sync` | `0 22 * * *` | Asia/Yerevan | About 22:00. Flexible, 15 minutes early or 30 minutes late. Sends only when the second brain changed. May auto-merge to `main` on edogbeatz/grok-bots only, under the rule 3 exception. |
 
@@ -158,7 +159,7 @@ Tell Edgar the result in the core report format: Result, Changes, Proof, Risks.
 - [ ] Each memory bullet in [bots/grok-bot/memory.md](bots/grok-bot/memory.md) is saved.
 - [ ] `understand-outputs` is installed.
 - [ ] The other skill folders in [skills/](skills/) are installed, with the same text.
-- [ ] `arman-slack-watch` exists, cron `0,30 9-21 * * *`, Asia/Yerevan, prompt matches [routines.md](bots/grok-bot/routines.md).
+- [ ] `arman-slack-watch` exists, cron `0,30 9-21 * * *`, Asia/Yerevan, prompt matches [routines.md](bots/grok-bot/routines.md). Leave it paused. Resume only after Edgar reconnects Slack and re-enables it.
 - [ ] `weekly-bot-design-check` exists, cron `0 10 * * 1`, Asia/Yerevan, prompt matches [routines.md](bots/grok-bot/routines.md).
 - [ ] `grok-bots-daily-sync` exists, cron `0 22 * * *`, Asia/Yerevan, prompt matches [routines.md](bots/grok-bot/routines.md).
 - [ ] `/workspace/arman-watch/last_seen.json` was read and left as it was.

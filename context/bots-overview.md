@@ -30,7 +30,7 @@
 | esp-toy-research | esp-toy-weekly | enabled (as last seen) |
 | exhlab-m2-product | exhlab-m2-weekly | enabled (as last seen) |
 | founder-move-scout | weekly-founder-move-digest | enabled (as last seen) |
-| Grok Bot | arman-slack-watch | enabled (snapshot 2026-11-19) |
+| Grok Bot | arman-slack-watch | paused (snapshot 2026-11-20) |
 | Grok Bot | weekly-bot-design-check | enabled (snapshot 2026-11-19; first run named 2026-11-23) |
 | Grok Bot | grok-bots-daily-sync | enabled (addendum 2026-11-19 17:10; cron `0 22 * * *` Asia/Yerevan) |
 | warwin.casino | Warwin Trello: things for Edgar | enabled (as last seen) |

@@ -1,14 +1,15 @@
 # Routines: Grok Bot
 
-From the main bot snapshot on 2026-11-19, plus the 17:10 Asia/Yerevan addendum. The 2026-11-16 export found no routines. Times are Asia/Yerevan. Recreate each with UpdateRoutine `action: create` from inside the new main bot. Copy the saved prompt word for word.
+From the main bot snapshot on 2026-11-19, plus the 17:10 Asia/Yerevan addendum. `arman-slack-watch` paused itself on 2026-11-20 09:37 Asia/Yerevan. The 2026-11-16 export found no routines. Times are Asia/Yerevan. Recreate each with UpdateRoutine `action: create` from inside the new main bot. Copy the saved prompt word for word. Create `arman-slack-watch` paused.
 
 ## arman-slack-watch
 
-- **State:** enabled (snapshot 2026-11-19)
+- **State:** paused (since 2026-11-20 09:37 Asia/Yerevan)
 - **Schedule (cron):** `0,30 9-21 * * *`
 - **Timezone:** Asia/Yerevan
 - **Timing:** flexible, up to 15 minutes early or late
 - **Delivers to:** this Grok Bot chat
+- **Why paused:** The Slack connector failed auth twice (`needsAuth`, 0 tools) and the routine paused itself. Slack needs reconnecting. It resumes once Edgar reconnects Slack and re-enables it. The cron does not change.
 - **Open choice:** Edgar may switch this to hourly, or to weekdays only, to cut usage. Until he chooses, keep this schedule. See [status.md](status.md).
 
 **Saved prompt:**

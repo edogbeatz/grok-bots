@@ -1,8 +1,9 @@
-# Status: Grok Bot (as of 2026-11-19 17:10 Asia/Yerevan)
+# Status: Grok Bot (as of 2026-11-20 09:37 Asia/Yerevan)
 
 - Morning snapshot plus the 17:10 addendum. No secrets. No email addresses.
-- Role: main coordinator. Edgar is starting a new main bot on this date. That bot reads [MIGRATION.md](../../MIGRATION.md) first.
-- Routines: 3 enabled (`arman-slack-watch`, `weekly-bot-design-check`, `grok-bots-daily-sync`). Prompts are in [routines.md](routines.md).
+- Role: main coordinator. Edgar is starting a new main bot on 2026-11-19. That bot reads [MIGRATION.md](../../MIGRATION.md) first.
+- Routines: 2 enabled (`weekly-bot-design-check`, `grok-bots-daily-sync`), 1 paused (`arman-slack-watch`). Slack needs reconnecting. Prompts are in [routines.md](routines.md).
+- `arman-slack-watch` paused itself at 2026-11-20 09:37 Asia/Yerevan. The Slack connector failed auth twice (`needsAuth`, 0 tools). It resumes once Edgar reconnects Slack and re-enables it. Cron stays `0,30 9-21 * * *`, Asia/Yerevan.
 - Skills: the 17:10 skills archive matched the repo. No skill file changed.
 - Earlier export status (2026-11-16): the chat was setting up this repo. That note is superseded by this file.
 
@@ -23,7 +24,7 @@ Cursors are in `/workspace/arman-watch/last_seen.json`. DM `D0CFX3D2TEZ`. #bots 
 
 These are questions. They are not rules. Do not start the unapproved work.
 
-1. Arman watch: switch to hourly, or run on weekdays only? This is a cost question. It stays open. Until Edgar chooses, keep `0,30 9-21 * * *`.
+1. Arman watch: switch to hourly, or run on weekdays only? This is a cost question. It stays open. Until Edgar chooses, keep `0,30 9-21 * * *`. The routine is paused until Slack is reconnected.
 2. zappi-nest auto-merge exception to standing rule 3b: still unconfirmed. See the open question in [context/standing-rules.md](../../context/standing-rules.md). Until Edgar confirms it, rule 3b stands: auto-merge only into `develop` on edogbeatz/zappi.
 3. Zappi Rail Test: send the core rules, or skip that bot? The repo has no bot with that exact name. The rail-test folder is [bots/zappi-test-swarm/](../zappi-test-swarm/).
 4. Not started. Needs Edgar's OK: a cloud agent for Linear 1-1102, 1-1103, and 1-1104. A relaunch for 1-1038 and 1-1030.

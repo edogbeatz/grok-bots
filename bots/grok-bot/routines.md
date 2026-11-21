@@ -1,6 +1,6 @@
 # Routines: Grok Bot
 
-From the main bot snapshot on 2026-11-19, plus the 17:10 Asia/Yerevan addendum. `arman-slack-watch` paused itself on 2026-11-20 09:37 Asia/Yerevan. The 2026-11-16 export found no routines. Times are Asia/Yerevan. Recreate each with UpdateRoutine `action: create` from inside the new main bot. Copy the saved prompt word for word. Create `arman-slack-watch` paused.
+From the main bot snapshot on 2026-11-19, plus the 17:10 Asia/Yerevan addendum. `arman-slack-watch` paused itself on 2026-11-20 09:37 Asia/Yerevan. Checked 2026-11-21: still paused, and `/workspace/arman-watch/last_seen.json` is missing. The 2026-11-16 export found no routines. Times are Asia/Yerevan. Recreate each with UpdateRoutine `action: create` from inside the new main bot. Copy the saved prompt word for word. Create `arman-slack-watch` paused. To resume: reconnect Slack, then UpdateRoutine resume. Prompt and schedule unchanged.
 
 ## arman-slack-watch
 
@@ -9,7 +9,7 @@ From the main bot snapshot on 2026-11-19, plus the 17:10 Asia/Yerevan addendum. 
 - **Timezone:** Asia/Yerevan
 - **Timing:** flexible, up to 15 minutes early or late
 - **Delivers to:** this Grok Bot chat
-- **Why paused:** The Slack connector failed auth twice (`needsAuth`, 0 tools) and the routine paused itself. Slack needs reconnecting. It resumes once Edgar reconnects Slack and re-enables it. The cron does not change.
+- **Why paused:** Paused after two Slack auth failures (`needsAuth`). `/workspace/arman-watch/last_seen.json` is missing. DM `D0CFX3D2TEZ` and #bots `C0CKZUSP03S` were not read. To resume: reconnect Slack, then UpdateRoutine resume. Prompt and schedule unchanged.
 - **Open choice:** Edgar may switch this to hourly, or to weekdays only, to cut usage. Until he chooses, keep this schedule. See [status.md](status.md).
 
 **Saved prompt:**

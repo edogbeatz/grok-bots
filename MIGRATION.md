@@ -7,13 +7,13 @@ You are that bot. Read this file first.
 
 Recreate these three routines. Prompts, crons, and timezone are in [bots/grok-bot/routines.md](bots/grok-bot/routines.md). Timezone for all three is Asia/Yerevan.
 
-1. `arman-slack-watch` — cron `0,30 9-21 * * *` — flexible, about 15 minutes. Paused since 2026-11-20 09:37 Asia/Yerevan. Create it paused. Resume once Edgar reconnects Slack and re-enables it. The cron does not change.
+1. `arman-slack-watch` — cron `0,30 9-21 * * *` — flexible, about 15 minutes. Paused since 2026-11-20 09:37 Asia/Yerevan. Still paused on 2026-11-21. Create it paused. To resume: reconnect Slack, then UpdateRoutine resume. Prompt and schedule unchanged.
 2. `weekly-bot-design-check` — cron `0 10 * * 1` — flexible, about 15 minutes.
-3. `grok-bots-daily-sync` — cron `0 22 * * *` — flexible, 15 minutes early or 30 minutes late.
+3. `grok-bots-daily-sync` — cron `0 22 * * *` — flexible, 15 minutes early or 30 minutes late. Ran 2026-11-20 22:36 and 2026-11-21.
 
-The old box already has this file. Read it. Do not reset it. Do not invent a new cursor.
+The 2026-11-21 check did not find `/workspace/arman-watch/last_seen.json`. DM `D0CFX3D2TEZ` and #bots `C0CKZUSP03S` were not read. If the file is on the box, read it. Do not reset it. Do not invent a new cursor.
 
-- `/workspace/arman-watch/last_seen.json`
+- `/workspace/arman-watch/last_seen.json` (missing on 2026-11-21)
   - Arman DM: `D0CFX3D2TEZ`
   - #bots: `C0CKZUSP03S`
 
@@ -85,7 +85,7 @@ Install the older skills too, so the account matches the export:
 - `warwin-character-generation`
 - `warwin-compliance-check`
 - `warwin-social-creative`
-- `zappi-pot`
+- `zappi-pot` (replaced 2026-11-21)
 - `zappi-rail-review`
 
 `legal-page-drafting` has no owner bot in this repo. The snapshot names `zappi-legal`. That bot was not exported. Install the skill. Do not invent the bot.
@@ -95,13 +95,13 @@ Install the older skills too, so the account matches the export:
 Open [bots/grok-bot/routines.md](bots/grok-bot/routines.md).
 Create each routine with UpdateRoutine, action `create`.
 Use the same name, the same cron, timezone Asia/Yerevan, flexible timing, and the saved prompt word for word.
-Create `arman-slack-watch` paused. Resume it only after Edgar reconnects Slack and re-enables it.
+Create `arman-slack-watch` paused. To resume: reconnect Slack, then UpdateRoutine resume. Prompt and schedule unchanged.
 
 | Routine | Cron | Timezone | When it sends |
 |---|---|---|---|
-| `arman-slack-watch` | `0,30 9-21 * * *` | Asia/Yerevan | Only when Arman has a new message. Flexible, about 15 minutes. Paused since 2026-11-20 09:37. The Slack connector failed auth twice (`needsAuth`, 0 tools) and the routine paused itself. Resume once Edgar reconnects Slack and re-enables it. Cron unchanged. |
+| `arman-slack-watch` | `0,30 9-21 * * *` | Asia/Yerevan | Only when Arman has a new message. Flexible, about 15 minutes. Paused since 2026-11-20 09:37. Still paused on 2026-11-21 after two Slack auth failures (`needsAuth`). `last_seen.json` is missing. DM `D0CFX3D2TEZ` and #bots `C0CKZUSP03S` were not read. To resume: reconnect Slack, then UpdateRoutine resume. Prompt and schedule unchanged. |
 | `weekly-bot-design-check` | `0 10 * * 1` | Asia/Yerevan | Monday about 10:00. First run named in the snapshot: 2026-11-23. Sends on a breach, a move of more than 10 points, or the first run. |
-| `grok-bots-daily-sync` | `0 22 * * *` | Asia/Yerevan | About 22:00. Flexible, 15 minutes early or 30 minutes late. Sends only when the second brain changed. May auto-merge to `main` on edogbeatz/grok-bots only, under the rule 3 exception. |
+| `grok-bots-daily-sync` | `0 22 * * *` | Asia/Yerevan | About 22:00. Flexible, 15 minutes early or 30 minutes late. Sends only when the second brain changed. Ran 2026-11-20 22:36 and 2026-11-21. May auto-merge to `main` on edogbeatz/grok-bots only, under the rule 3 exception. |
 
 Create these folders if they are missing:
 
@@ -109,7 +109,7 @@ Create these folders if they are missing:
 - `/workspace/bot-design-check/`
 - `/workspace/handoff/daily/`
 
-`/workspace/arman-watch/last_seen.json` should already be on the box. Read it. Do not reset it.
+The 2026-11-21 check did not find `/workspace/arman-watch/last_seen.json`. If it is on the box, read it. Do not reset it. Do not invent a cursor.
 
 Do not run a full check now. Let the schedule fire.
 Do not reply on Slack from the Arman watch. The prompt forbids that.
@@ -159,10 +159,10 @@ Tell Edgar the result in the core report format: Result, Changes, Proof, Risks.
 - [ ] Each memory bullet in [bots/grok-bot/memory.md](bots/grok-bot/memory.md) is saved.
 - [ ] `understand-outputs` is installed.
 - [ ] The other skill folders in [skills/](skills/) are installed, with the same text.
-- [ ] `arman-slack-watch` exists, cron `0,30 9-21 * * *`, Asia/Yerevan, prompt matches [routines.md](bots/grok-bot/routines.md). Leave it paused. Resume only after Edgar reconnects Slack and re-enables it.
+- [ ] `arman-slack-watch` exists, cron `0,30 9-21 * * *`, Asia/Yerevan, prompt matches [routines.md](bots/grok-bot/routines.md). Leave it paused. To resume: reconnect Slack, then UpdateRoutine resume.
 - [ ] `weekly-bot-design-check` exists, cron `0 10 * * 1`, Asia/Yerevan, prompt matches [routines.md](bots/grok-bot/routines.md).
-- [ ] `grok-bots-daily-sync` exists, cron `0 22 * * *`, Asia/Yerevan, prompt matches [routines.md](bots/grok-bot/routines.md).
-- [ ] `/workspace/arman-watch/last_seen.json` was read and left as it was.
+- [ ] `grok-bots-daily-sync` exists, cron `0 22 * * *`, Asia/Yerevan, prompt matches [routines.md](bots/grok-bot/routines.md). It ran 2026-11-20 22:36 and 2026-11-21.
+- [ ] `/workspace/arman-watch/last_seen.json` was missing on 2026-11-21. If it is on the box, it was read and left as it was. It was not invented.
 - [ ] `/workspace/bot-design-check/` and `/workspace/handoff/daily/` exist.
 - [ ] The connector list in section 6 was shown to Edgar. Nothing was connected with a pasted token.
 - [ ] No secret, token, key, seed, session, or `~/.zappi/` file was written into this repo.

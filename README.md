@@ -1,6 +1,6 @@
 # grok-bots
 
-Portable export of Edgar Yan's (GitHub **edogbeatz**) whole Grok Bot setup: 18 bot folders, their instructions, routines, memory, skills, and shared context. Exported 2026-11-16 (Asia/Yerevan) from the original account. The main coordinator's second brain was refreshed from a snapshot on 2026-11-19, with a 17:10 addendum the same day. Edgar is starting a new main bot. Follow [MIGRATION.md](MIGRATION.md) first.
+Portable export of Edgar Yan's (GitHub **edogbeatz**) whole Grok Bot setup: 18 bot folders, their instructions, routines, memory, skills, and shared context. Exported 2026-11-16 (Asia/Yerevan) from the original account. The main coordinator's second brain was refreshed from a snapshot on 2026-11-19, with a 17:10 addendum the same day, and checked on 2026-11-21. Edgar is starting a new main bot. Follow [MIGRATION.md](MIGRATION.md) first.
 
 Use it when Edgar opens another Grok Bot account (or another system) and wants it to know what's going on and to have the same bots.
 
@@ -21,7 +21,7 @@ Use it when Edgar opens another Grok Bot account (or another system) and wants i
 - [context/projects/](context/projects/): one file per project.
 - [bots/grok-bot/](bots/grok-bot/): the main coordinator (brief, memory, routines, skills, open items).
 - [bots/](bots/): one folder per bot.
-- [skills/](skills/): user skills. Three added on 2026-11-19: `understand-outputs`, `legal-page-drafting`, `zappi-send-fee-check`.
+- [skills/](skills/): user skills. Three added on 2026-11-19: `understand-outputs`, `legal-page-drafting`, `zappi-send-fee-check`. `zappi-pot` replaced on 2026-11-21.
 - [docs/defects.md](docs/defects.md): open items that need Edgar.
 - [SYNC.md](SYNC.md): how to refresh this repo.
 - [templates/](templates/): one role template per bot type.

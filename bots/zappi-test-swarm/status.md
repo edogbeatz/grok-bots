@@ -1,4 +1,9 @@
-# Status: zappi-test-swarm (as of 2026-11-16)
+# Status: zappi-test-swarm (as of 2026-11-23, Asia/Yerevan)
+
+- The live bot is missing. Bootstrap id `3e67ebda-9451-464b-b703-d7134c12c3d1` is in deleted-agents and is not in the live agents folder. No replacement id was found. Keep this folder. Do not invent a replacement.
+- The notes below are the 2026-11-16 export. They are not a live check.
+
+## Export status (2026-11-16)
 
 - Last activity: 2026-11-16 10:33 Asia/Yerevan
 - Routines: 0 (0 paused)

@@ -17,3 +17,9 @@
 - Watches token/usage spend; on 2026-11-15/16 asked to pause the Zappi PR auto-fixer and other Zappi routines.
 - Uses voice calls with the main Grok Bot often.
 - Wants this repo (edogbeatz/grok-bots) to be the source of truth for the bot system; no logins, keys or connected accounts in it.
+
+## Added 2026-11-22 and 2026-11-23
+
+- (2026-11-22) Edgar works on Zappi Money (zappi.money) and builds bots for it, including marketing content and UX evaluation.
+- (2026-11-23) Edgar approved the main bot using its own grokbot.com address for sign-ups, including a Zappi staging (dev.zappi.money) test account. This file does not store the address.
+- (2026-11-19, recorded here 2026-11-23) Tertiary degree from Da Vinci College in Argentina (most likely Escuela Da Vinci, Buenos Aires, a recognised non-university institute), finished within the last 10 years. Exact title, level, and graduation date are not known. He is also on the MIT executive education track (non-degree).

@@ -1,15 +1,15 @@
-# Routines: Grok Bot
+# Routines: Ari (Grok Bot)
 
-From the main bot snapshot on 2026-11-19, plus the 17:10 Asia/Yerevan addendum. `arman-slack-watch` paused itself on 2026-11-20 09:37 Asia/Yerevan. Checked 2026-11-21: still paused, and `/workspace/arman-watch/last_seen.json` is missing. The 2026-11-16 export found no routines. Times are Asia/Yerevan. Recreate each with UpdateRoutine `action: create` from inside the new main bot. Copy the saved prompt word for word. Create `arman-slack-watch` paused. To resume: reconnect Slack, then UpdateRoutine resume. Prompt and schedule unchanged.
+Checked 2026-11-23, Asia/Yerevan. Three routines exist. All three are enabled. Prompts, crons, and timezone are unchanged. Times are Asia/Yerevan. Recreate each with UpdateRoutine `action: create` from inside the main bot. Copy the saved prompt word for word. Create all three enabled.
 
 ## arman-slack-watch
 
-- **State:** paused (since 2026-11-20 09:37 Asia/Yerevan)
-- **Schedule (cron):** `0,30 9-21 * * *`
+- **State:** enabled (resumed 2026-11-23). Slack reconnected. `/workspace/arman-watch/last_seen.json` exists. Do not copy its contents. Do not reset it.
+- **Schedule (cron):** `0,30 9-21 * * *` (unchanged)
 - **Timezone:** Asia/Yerevan
 - **Timing:** flexible, up to 15 minutes early or late
-- **Delivers to:** this Grok Bot chat
-- **Why paused:** Paused after two Slack auth failures (`needsAuth`). `/workspace/arman-watch/last_seen.json` is missing. DM `D0CFX3D2TEZ` and #bots `C0CKZUSP03S` were not read. To resume: reconnect Slack, then UpdateRoutine resume. Prompt and schedule unchanged.
+- **Delivers to:** this chat (Ari)
+- **History:** Paused itself on 2026-11-20 09:37 Asia/Yerevan after two Slack auth failures (`needsAuth`). Still paused on 2026-11-21, when `last_seen.json` was missing. DM `D0CFX3D2TEZ` and #bots `C0CKZUSP03S` were not read that day. The first run after resume was allowed to start a new cursor. Prompt and schedule unchanged.
 - **Open choice:** Edgar may switch this to hourly, or to weekdays only, to cut usage. Until he chooses, keep this schedule. See [status.md](status.md).
 
 **Saved prompt:**
@@ -23,12 +23,12 @@ Send results only to Edgar in this Grok Bot chat. If there is nothing new, send 
 
 ## weekly-bot-design-check
 
-- **State:** enabled (snapshot 2026-11-19)
-- **Schedule (cron):** `0 10 * * 1`
+- **State:** enabled
+- **Schedule (cron):** `0 10 * * 1` (unchanged)
 - **Timezone:** Asia/Yerevan
 - **Timing:** flexible, up to 15 minutes early or late
-- **First run named in the snapshot:** 2026-11-23
-- **Delivers to:** this Grok Bot chat, only on the conditions in the prompt
+- **First run:** completed about 09:53 Asia/Yerevan on 2026-11-23. Baseline `/workspace/bot-design-check/2026-11-23.json`. No gate breaches. The first run sent a report, as required. Prompt and cron unchanged.
+- **Delivers to:** this chat, only on the conditions in the prompt
 
 **Saved prompt:**
 
@@ -38,11 +38,12 @@ Weekly check of whether Edgar's bots follow the new design from grok-bots main (
 
 ## grok-bots-daily-sync
 
-- **State:** enabled (addendum 2026-11-19 17:10 Asia/Yerevan)
-- **Schedule (cron):** `0 22 * * *`
+- **State:** enabled
+- **Schedule (cron):** `0 22 * * *` (unchanged)
 - **Timezone:** Asia/Yerevan
 - **Timing:** flexible, up to 15 minutes early or 30 minutes late
-- **Delivers to:** this Grok Bot chat
+- **Recent runs:** 2026-11-20 22:36 and 2026-11-21 (pull requests merged). 2026-11-22: no meaningful change, nothing sent. 2026-11-23: a manual mid-day snapshot. Prompt and cron unchanged.
+- **Delivers to:** this chat
 - **Merge scope:** edogbeatz/grok-bots only, and only this daily update, under the rule 3 exception in [context/standing-rules.md](../../context/standing-rules.md)
 
 **Saved prompt:**

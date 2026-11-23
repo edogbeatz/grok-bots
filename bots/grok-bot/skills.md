@@ -36,4 +36,16 @@ Built-in skills (routines, scheduling, code-changes, x-api-mcp-guide, and the re
 
 Skipped from the export: `.library-fingerprint`. It is a hash list, not a skill.
 
-The 17:10 Asia/Yerevan skills archive was compared again. All twelve `SKILL.md` files matched this repo. No skill was added or edited.
+The 17:10 Asia/Yerevan skills archive was compared again. All twelve `SKILL.md` files matched this repo. No skill was added or edited that day.
+
+Checked 2026-11-23. Those twelve skills stay as they are on main. `zappi-pot` matches the live workflow (24666 bytes, sha256 `1726bc747b274998320351187ca9659fc647c891245a9f64cbe321a84050cc73`). It was not edited.
+
+New in the 2026-11-23 skills folder:
+
+- `ux-writing-review`
+- `web-interface-guidelines`
+- `zappi`
+
+`ux-writing-review` and `web-interface-guidelines` are for UX judgment. The 2026-11-23 snapshot does not confirm that Edgar has handed them to the judge bots. `zappi` is the pot skill for pairing, balance, deposit, and send. The plugin-watch brief points at it. This coordinator still follows `understand-outputs`.
+
+Skipped again: `.library-fingerprint`. It is a hash list, not a skill.
